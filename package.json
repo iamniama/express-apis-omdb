@@ -1,6 +1,6 @@
 {
   "name": "express-apis-omdb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -9,10 +9,12 @@
   },
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.1.0",
-    "ejs": "^3.0.1",
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
-    "morgan": "^1.9.1"
+    "method-override": "^3.0.0",
+    "morgan": "^1.10.0"
   }
 }
