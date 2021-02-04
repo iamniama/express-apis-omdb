@@ -1,0 +1,16 @@
+<ul class="list-group" style="margin-left: 25px;">
+    <%data.forEach(function(item, index){ %>
+     
+            <li class="list-group-item" style="width: 35%;align-content: center;">
+                <% if(item.image.length > 5) { %>
+                <img src="<%=item.image %>" class="img-thumbnail" title="<%=item.title%>" />
+            <%} else {%>
+                    <p class="card-text">(NO IMAGE FOR POSTER)</p>
+                <%}%>
+                <p class="lead"><%=item.title%>, <%=item.year%></p>
+                
+                <p class="card-text"><%=item.plot%></p>
+            </li>
+    
+    <% }) %>
+    </ul>

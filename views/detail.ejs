@@ -8,8 +8,26 @@
                     <p class="card-text">(NO IMAGE FOR POSTER)</p>
                 <%}%>
                 <p class="lead"><%=item.Title%>, <%=item.Year%></p>
+                <form method="POST" action="/faves">
+                    <input class="form-control" type="hidden" name="title" id="title" value="<%=item.Title%>" />
+                    <input class="form-control" type="hidden" name="image" id="image" value="<%=item.Poster%>" />
+                    <input class="form-control" type="hidden" name="plot" id="plot" value="<%=item.Plot%>" />
+                    <input class="form-control" type="hidden" name="IMDB" id="IMDB" value="<%=item.imdbID%>" />
+                    <input class="form-control" type="hidden" name="year" id="year" value="<%=item.Year%>" />
+                    <input class="btn btn-primary" type="submit" value="Add Favorite">
+                </form>
                 <p class="card-text"><%=item.Plot%></p>
             </li>
     
     <% }) %>
     </ul>
+
+
+
+
+
+    
+    <!--
+    //sequelize model:create --name user --attributes firstName:string,lastName:string,age:integer,email:string
+    sequelize model:create --name favorite --attributes title:string,year:integer,image:string,plot:string,IMDB:string
+    -->
