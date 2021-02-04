@@ -1,4 +1,5 @@
 require('dotenv').config();
+const db = require("./models")
 const express = require('express');
 const ejsLayouts = require('express-ejs-layouts');
 const app = express();
@@ -79,6 +80,20 @@ axios.get('http://www.omdbapi.com', qParams)
     .then(function(mData){
         res.render('detail', {data:[mData]})
     })
+})
+
+app.get("/faves", function(req, res){
+  db.favorite.findAll()
+  .then ((favorites)=>{
+    res.render('faves', {data:favorites})
+  })
+})
+
+app.post("/faves", function(req, res){
+  db.favorite.create(req.body)
+  .then(function(data){
+    res.redirect("/faves")
+  })
 })
 
 // The app.listen function returns a server handle
