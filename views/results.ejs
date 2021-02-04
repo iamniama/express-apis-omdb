@@ -1,2 +1,23 @@
-<% // Render your search results here %>
-<% // This is how to do comments in EJS, by the way... %>
+<ul class="list-group">
+    <%data.data.forEach(function(item, index){ %>
+     
+            <li class="list-group-item">
+                <% if(item.Poster.length > 5) { %>
+                <img src="<%=item.Poster %>" class="img-thumbnail" title="<%=item.Title%>"/>
+            <%} else {%>
+                    <p class="card-text">(NO IMAGE FOR POSTER)</p>
+                <%}%>
+                <p class="lead"><a href="/title/<%=item.Title%>"> <%=item.Title%></a>, <%=item.Year%></p>
+            </li>
+    
+    <% }) %>
+    </ul>
+
+    <% if (data.paged) {%>
+        <a href="/search/<%=`${data.term}/${parseInt(data.page) - 1}` %>" style="float: left;margin-left: 50px;margin-bottom:50px;">PREV</a>
+        <a href="/search/<%=`${data.term}/${parseInt(data.page) + 1}` %>" style="float: right;margin-right: 50px;margin-bottom:50px;">NEXT</a>
+    <%} else {%>
+        <a href="/search/<%=`${data.term}/2` %>" style="float: right;margin-right: 50px;margin-bottom:50px;">NEXT</a>
+        <%}%>
+
+    

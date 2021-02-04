@@ -1,17 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>OMDB Movie Search</title>
+    <title>Express API CodeAlong</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 </head>
+
+<% const titles = ["He Never Died", "The Last Heist", "Gutterdammerung", "Feast"] %>
+
+
 <body>
-  <nav>
-    <a href="/">home</a>
-  </nav>
-  <main>
-    <%- body %>
-  </main>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">MOVIES</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/">HOME</a></li>
+                <!--
+                <li><a href="/omdb/star%20wars">Star Wars</a></li>
+                <li><a href="/omdb/title/<%=titles[Math.floor(Math.random() * titles.length)] %>">Rollins</a></li>
+                <li><a href="/omdb/search">Search OMDB</a></li>
+                -->
+            </ul>
+        </div>
+    </nav>
+    
+    
+   
+            <%- body %>
+
+
 </body>
+
 </html>
