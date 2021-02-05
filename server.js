@@ -62,11 +62,13 @@ app.get('/search/:term/:page', function(req,res){
     
 
 })
+app.get('/title')
 
-app.get('/title/:title', function(req,res){
+app.get('/title/:title/:year', function(req,res){
   const qParams = {
     params: {
         t: req.params.title,
+        y: req.params.year,
         plot:"full",
         apikey: process.env.OMDB_API_KEY
     }
