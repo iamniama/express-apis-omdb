@@ -1,18 +1,17 @@
 <ul class="list-group">
     <%data.data.forEach(function(item, index){ %>
      
-            <li class="list-group-item">
+            <li class="list-group-item" style="background-color: lightcyan">
                 <% if(item.Poster.length > 5) { %>
                 <img src="<%=item.Poster %>" class="img-thumbnail" title="<%=item.Title%>"/>
             <%} else {%>
                     <p class="card-text">(NO IMAGE FOR POSTER)</p>
                 <%}%>
-                <p class="lead"><a href="/title/<%=item.Title%>"> <%=item.Title%></a>, <%=item.Year%></p>
+                <p class="lead"><a href="/title/<%=item.Title%>/<%=item.Year%>"> <%=item.Title%></a>, <%=item.Year%></p>
             </li>
     
     <% }) %>
     </ul>
-
     <% if (data.paged) {%>
         <a href="/search/<%=`${data.term}/${parseInt(data.page) - 1}` %>" style="float: left;margin-left: 50px;margin-bottom:50px;">PREV</a>
         <a href="/search/<%=`${data.term}/${parseInt(data.page) + 1}` %>" style="float: right;margin-right: 50px;margin-bottom:50px;">NEXT</a>

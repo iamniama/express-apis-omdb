@@ -1,7 +1,7 @@
 <ul class="list-group" style="margin-left: 25px;">
     <%data.forEach(function(item, index){ %>
      
-            <li class="list-group-item" style="width: 35%;align-content: center;">
+            <li class="list-group-item" style="align-content: center;background-color: lightcyan">
                 <% if(item.image.length > 5) { %>
                 <img src="<%=item.image %>" class="img-thumbnail" title="<%=item.title%>" />
             <%} else {%>

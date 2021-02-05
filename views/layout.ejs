@@ -9,7 +9,7 @@
 <% const titles = ["He Never Died", "The Last Heist", "Gutterdammerung", "Feast"] %>
 
 
-<body>
+<body style="background-color: azure;">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -18,6 +18,7 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">HOME</a></li>
                 <li><a href="/faves">FAVES</a></li>
+                <li><a href="/title">TITLE Search</a></li>
                 <!--
                 <li><a href="/omdb/star%20wars">Star Wars</a></li>
                 <li><a href="/omdb/title/<%=titles[Math.floor(Math.random() * titles.length)] %>">Rollins</a></li>
@@ -26,7 +27,7 @@
             </ul>
         </div>
     </nav>
-    <div id="main-content" style="margin-left: 20px;">
+    <div id="main-content" style="margin-left: 20px;background-color: lightcyan;width:45%;">
     
    
             <%- body %>
